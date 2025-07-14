@@ -1,9 +1,59 @@
-<h2>Login</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
 
-<form method="POST" action="/login">
+    form {
+      background-color: white;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(3, 0, 0, 0.1);
+    }
 
-  <input type="email" name="email" required placeholder="Email"><br>
-  <input type="password" name="password" required placeholder="Password"><br>
-  <button type="submit">Login</button>
-  
-</form>
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .message {
+      color: green;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <% if (msg) { %>
+    <div class="message"><%= msg %></div>
+  <% } %>
+
+  <h1>Login</h1>
+  <form method="POST" action="/login">
+    <label>Email:</label><br />
+    <input type="email" name="email" required /><br />
+    <label>Password:</label><br />
+    <input type="password" name="password" required /><br />
+    <button type="submit">Login</button>
+  </form>
+
+</body>
+</html>

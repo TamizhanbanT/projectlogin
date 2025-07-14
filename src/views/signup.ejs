@@ -1,29 +1,61 @@
-<!-- <h4>Welcome !</h4>
-
-
-<h2>Signup</h2>
-<form method="POST" action="/signup">
-  <input type="text" name="name" required placeholder="Name"><br>
-  <input type="email" name="email" required placeholder="Email"><br>
-  <input type="password" name="password" required placeholder="Password"><br>
-  <button type="submit">Signup</button>
-</form> -->
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Signup Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    form {
+      background-color:whitesmoke;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Signup Form</h1>
+
+  <% if (error) { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+
+  <h1>Signup</h1>
   <form method="POST" action="/signup">
     <label>Name:</label><br />
-    <input type="text" name="name" /><br />
+    <input type="text" name="name" required /><br />
     <label>Email:</label><br />
-    <input type="email" name="email" /><br />
+    <input type="email" name="email" required /><br />
     <label>Password:</label><br />
-    <input type="password" name="password" /><br />
+    <input type="password" name="password" required /><br />
     <button type="submit">Sign Up</button>
   </form>
+
 </body>
 </html>
